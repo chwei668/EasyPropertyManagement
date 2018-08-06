@@ -20,7 +20,7 @@ exports.config = {
   useAllAngular2AppRoots: true,
   beforeLaunch: function () {
     require('ts-node').register({
-      project: 'e2e.app/tsconfig.e2e.json'
+      project: './tsconfig.e2e.json'
     });
 
     // require('connect')().use(require('serve-static')('www')).listen(4200);
