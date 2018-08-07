@@ -20,6 +20,11 @@ describe('Property Management Tests', async () => {
     expect (homeLink.isPresent()).toBeTruthy();
   });
 
+  it('Add New button should be available', async () => {
+    const editButton = element (by.buttonText('Add New'));
+    expect (editButton.isPresent()).toBeTruthy();
+  });
+
   it('should have a refresh button which is clickable', async () => {
     const refreshButton = element(by.cssContainingText('button', '[class="fa fa-refresh"]'));
     refreshButton.click();
@@ -32,9 +37,8 @@ describe('Property Management Tests', async () => {
   });
 
   it('Name and Address should be diplayed at grid view', async () => {
-    const nameAddress = $('.panel-heading');
-    const headerText = await propertiesHeader.getText();
-    expect(headerText).toEqual('Properties');
+    const nameAddress = element (by.cssContainingText('Name', 'Address'));
+    expect (nameAddress.isPresent()).toBeTruthy();
   });
 
 });
